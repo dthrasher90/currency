@@ -1,0 +1,21 @@
+body {
+  font-family: serif;
+  color: oldlace;
+  background-color: oldlace;
+}
+
+header{
+  height: 90px;
+  width: 100%;
+  border-bottom: 3px solid black;
+  text-align: center;
+  padding-top: 20px;
+  font-family: sans-serif;
+  background-color: #663399;
+  color: azure;
+}
+
+.form-container .submit-form{
+    text-align :center;
+    margin-top: 50px;
+}
