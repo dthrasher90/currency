@@ -24,29 +24,25 @@
       <div class="row">
         <form class= "form-inline submit-form">
           <div class="form-group">
-            <label for=""> Ammount</label>
-            <input type="number" class="form-control" ng-model="ammount"></input>
-                <select ng-model= "currencyIndex">
-                  <option>EUR</option>
-                  <option>USD</option>
-                  <option>GBP</option>
-                </select>
-          <button ng-click="submit()" class="btn btn-primary">Convert</button>
-          </form>
+
+            <input type="number" class="form-control" ng-model="amount"></input>
+                  <select ng-model= "selectedRate">
+                    <option>EUR</option>
+                    <option>USD</option>
+                    <option>GBP</option>
+                  </select>
+                  {{selectedRate}}
+
+                <button ng-click="submit()" class="btn btn-primary">Convert</button>
+              </form>
         </div>
-
-
-
-
-          <ul ng-repeat="item in currency">
-
-                <li>{{item.name}}</li>
-                <li>{{item.rate}}</li>
-          </ul>
 
       </div>
     </section>
+            <ul ng-repeat="y in currency">
+            <li>{{y}}</li>
 
+            </ul>
 
  </div>
 

@@ -4,16 +4,28 @@ var app = angular.module('currencyApp', []);
 
 app.controller('mainCtrl', function($scope, $http){
 
-  $http.get('/currency').then(function( data){
+  function converter(){
+    // total=currencyIndex * amount;
+    // console.log(total);
+  }
+
+  $http.get('/currency').then(function(data){
     console.log("i got the data", data);
-    $scope.currency = data;
+    $scope.currency = data.data.data;
     console.log($scope.currency);
   });
 
   $scope.submit = function(){
     alert("subit button pressed");
-    $http.post('/currency', $scope.ammount);
-    console.log($scope.ammount);
+        $http.post('/currency').then(function(data){
+
+        console.log(data);
+        console.log($scope.amount);
+  //      converter();
+      });
+
+
   }
+
 
 });
