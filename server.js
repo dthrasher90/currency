@@ -34,7 +34,7 @@ app.post('/currency', function(req, res){
 
   newCurrency.save(function(err, result) {
     if(err){
-      res.json({status: false, error: "Currency not saved"});
+    res.json({status: false, error: "Currency not saved"});
 			return;
     }
     res.json({status: true, data: result});
@@ -44,7 +44,7 @@ app.post('/currency', function(req, res){
 app.get('/currency', function(req, res){
   Currency.find(function(err, result){
     if(err){
-      res.json({status: false, error: "Error in finding currency"});
+    res.json({status: false, error: "Error in finding currency"});
 			return;
     }
     res.json({status: true, data: result});

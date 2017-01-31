@@ -26,10 +26,11 @@
           <div class="form-group">
 
             <input type="number" class="form-control" ng-model="amount"></input>
-                  <select ng-model= "selectedRate">
-                    <option>EUR</option>
-                    <option>USD</option>
-                    <option>GBP</option>
+                  <select ng-model= "currencyIndex" ng-chagne="currencyIndex(selectedIndex)">
+                        <option>EUR</option>
+                        <option>GPB</option>
+                        <option>JPY</option>
+                        <option>MXN<option>
                   </select>
                   {{selectedRate}}
 
@@ -39,8 +40,9 @@
 
       </div>
     </section>
+
             <ul ng-repeat="y in currency">
-            <li>{{y}}</li>
+            <li>{{y.name}} {{y.rate}} {{amount}}</li>
 
             </ul>
 
