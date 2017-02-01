@@ -26,16 +26,18 @@
           <div class="form-group">
 
             <input type="number" class="form-control" ng-model="amount"></input>
-                  <select ng-model= "currencyIndex" ng-chagne="currencyIndex(selectedIndex)">
+                  <select ng-model= "currencyIndex" >
                         <option>EUR</option>
                         <option>GPB</option>
                         <option>JPY</option>
-                        <option>MXN<option>
+                        <option>MXN</option>
                   </select>
-                  {{selectedRate}}
+                  {{currencyIndex}}
 
                 <button ng-click="submit()" class="btn btn-primary">Convert</button>
               </form>
+
+               {{$scope.newTotal}}
         </div>
 
       </div>
