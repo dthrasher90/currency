@@ -2,8 +2,10 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var currencySchema = new Schema({
-      symbol: String,
-      rate: Number
+      name: String,
+      rate: Number,
+      amount: Number,
+      total: Number
 });
 
 

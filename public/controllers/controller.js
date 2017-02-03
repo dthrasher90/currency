@@ -4,8 +4,16 @@ var app = angular.module('currencyApp', []);
 
 app.controller('mainCtrl', function($scope, $http){
 
-$scope.currencyIndex =null;
 
+
+// app.config(function ($httpProvider) {
+//     $httpProvider.defaults.transformRequest = function(data){
+//         if (data === undefined) {
+//             return data;
+//         }
+//         return $.param(data);
+//     }
+// });
 
 
   $http.get('http://api.fixer.io/latest?base=USD').then(function(results){
@@ -26,47 +34,51 @@ $scope.currencyIndex =null;
 
     $scope.$watch('currencyIndex', function(newCurrencyIndex, oldCurrencyIndex){
 
-    //  console.log(newCurrencyIndex, oldCurrencyIndex);
-      $scope.currencyIndex = newCurrencyIndex;
-    //  console.log($scope.currencyIndex);
 
-
-      if($scope.currencyIndex = 'EUR') {
-        $scope.currencyIndex = $scope.EURrate;
-        console.log($scope.currencyIndexEUR);
-        var newTotal = $scope.amount * $scope.currencyIndex;
-        console.log(newTotal);
-
-
-      } else
-
-      if($scope.currencyIndex = 'GBP') {
-        $scope.currencyIndex = $scope.GBPrate;
-        // var newTotal = $scope.amount * $scope.currencyIndex;
-        // console.log(newTotal);
-      } else
-
-      if($scope.currencyIndex = 'JPY') {
-        $scope.currencyIndex = $scope.JPYrate;
-        console.log($scope.currencyIndex);
-      } else
-
-
-      if(currencyIndex = 'MXN') {
-        $scope.currencyIndex = $scope.MXNrate;
-        console.log($scope.currencyIndex);
+      if($scope.currencyIndex == 'EUR') {
+        $scope.currencyIndexRate = $scope.EURrate;
+        console.log($scope.currencyIndexRate);
       }
 
-      console.log(newTotal);
+      if($scope.currencyIndex == 'GBP') {
+        $scope.currencyIndexRate = $scope.GBPrate;
+         console.log($scope.currencyIndexRate);
+      }
+
+      if($scope.currencyIndex == 'JPY') {
+        $scope.currencyIndexRate = $scope.JPYrate;
+        console.log($scope.currencyIndexRate);
+      }
+
+
+      if($scope.currencyIndex == 'MXN') {
+        $scope.currencyIndexRate = $scope.MXNrate;
+        console.log($scope.currencyIndexRate);
+      }
+
     })
 
 
 
   $scope.submit = function(newTotal){
     alert("subit button pressed");
-        $http.post('/currency').then(function(data){
-      //  console.log(newTotal);
-      });
+    console.log($scope.amount);
+    $scope.newTotal = $scope.currencyIndexRate * amount;
+    console.log($scope.newTotal);
+        $http.post('/currency',  {
+              name: $scope.currencyIndex,
+              amount: $scope.amount,
+              rate: $scope.currencyIndexRate,
+              total: $scope.newTotal
+            })
+        .then(function(response){
+          console.log("post request made", response);
+
+        }, function (response){
+          console.log("an error has occured");
+
+        });
+
 
 
   }

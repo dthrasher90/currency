@@ -27,18 +27,16 @@ app.post('/currency', function(req, res){
   var newCurrency = new Currency({
       name:  req.body.name,
       amount: req.body.amount,
-      rate:  req.body.rate
-
-  });
-
-
-  newCurrency.save(function(err, result) {
-    if(err){
-    res.json({status: false, error: "Currency not saved"});
-			return;
-    }
-    res.json({status: true, data: result});
-  })
+      rate:  req.body.rate,
+      total: req.body.newTotal
+      })
+      newCurrency.save(function(err, result) {
+        if(err){
+        res.json({status: false, error: "Currency not saved"});
+    		return;
+        }
+        res.json({status: true, data: result});
+      })
 });
 
 app.get('/currency', function(req, res){

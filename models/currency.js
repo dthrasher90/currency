@@ -4,7 +4,9 @@ var Schema = mongoose.Schema;
 // CurrencySchema
 var CurrencySchema = new Schema({
 	name: String,
-	rate: Number
+	amount: Number,
+	rate: Number,
+	total:  Number
 });
 
 

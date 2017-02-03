@@ -1,21 +1,74 @@
-body {
-  font-family: serif;
-  color: oldlace;
-  background-color: oldlace;
+
+ul{
+  list-style: none;
 }
 
-header{
-  height: 90px;
-  width: 100%;
-  border-bottom: 3px solid black;
+li{
+  background-color: white;
   text-align: center;
-  padding-top: 20px;
-  font-family: sans-serif;
-  background-color: #663399;
-  color: azure;
+  margin:  20px;
+  padding: 10px;
 }
 
-.form-container .submit-form{
-    text-align :center;
-    margin-top: 50px;
+body{
+  background-color: lightblue;
 }
+
+html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+html body {
+    position: absolute;
+    padding: 0 px;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+input {
+  max-width: 220px;
+}
+
+select {
+  max-width: 80px;
+}
+
+
+.displaybox{
+  background-color: black;
+  color: white;
+  height: 50px;
+
+}
+
+
+
+.header {
+   background-color: crimson;
+   color: white;
+
+   padding-bottom: 12px;
+}
+
+.leftColumn {
+
+   background-color: lightgrey;
+}
+
+
+.selector{
+
+  background-color: lightgrey;
+}
+
+
+
+.saveditems{
+
+background-color: lightgrey;
+
+}
+
+/*
