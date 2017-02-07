@@ -1,17 +1,7 @@
 
-ul{
-  list-style: none;
-}
-
-li{
-  background-color: white;
-  text-align: center;
-  margin:  20px;
-  padding: 10px;
-}
-
 body{
   background-color: lightblue;
+  font-family: lucida;
 }
 
 html {
@@ -31,19 +21,35 @@ input {
   max-width: 220px;
 }
 
-select {
-  max-width: 80px;
+h2{
+  text-align: center;
 }
-
 
 .displaybox{
   background-color: black;
   color: white;
   height: 50px;
+  padding: 10px;
 
 }
 
+.currentRate p {
 
+  color: lime;
+
+}
+
+ul{
+  list-style: none;
+
+}
+
+li {
+
+  font-size: 18px;
+  text-align: center;
+
+}
 
 .header {
    background-color: crimson;
@@ -63,12 +69,12 @@ select {
   background-color: lightgrey;
 }
 
-
+.inputFields{
+  background-color: lightgrey;
+}
 
 .saveditems{
 
 background-color: lightgrey;
 
 }
-
-/*
