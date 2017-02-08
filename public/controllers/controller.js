@@ -72,7 +72,8 @@ app.controller('mainCtrl', function($scope, $http) {
         alert("subit button pressed");
         console.log($scope.currencyIndexRate);
         $scope.total = $scope.currencyIndexRate * $scope.amount;
-        console.log($scope.total);
+        $scope.total = $scope.total.toFixed(2);
+        console.log($scope.total)
         $http.post('/currency', {
                 name: $scope.currencyIndex,
                 amount: $scope.amount,
@@ -85,10 +86,10 @@ app.controller('mainCtrl', function($scope, $http) {
             }, function(response) {
                 console.log("an error has occured");
 
-                refresh();
+
             });
 
-
+            refresh();
 
     }
 

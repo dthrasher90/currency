@@ -11,14 +11,15 @@ html {
 }
 
 html body {
-    position: absolute;
-    padding: 0 px;
+    position: absolute;;
+
     background-color: #ffffff;
     color: #000000;
 }
 
 input {
   max-width: 220px;
+
 }
 
 h2{
@@ -30,6 +31,8 @@ h2{
   color: white;
   height: 50px;
   padding: 10px;
+  text-align: center;
+
 
 }
 
@@ -66,7 +69,8 @@ li {
 
 .selector{
 
-  background-color: lightgrey;
+  background-color: lightgrey;\
+  clear: both;
 }
 
 .inputFields{
