@@ -1,59 +1,103 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title></title>
-    <link rel="stylesheet"  type= "text/css" href="/main.css">
+    <link rel="stylesheet" type="text/css" href="/main.css">
 
     <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
- integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+</head>
+
+<body ng-app='currencyApp'ng-controller='mainCtrl'>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 col-xs-12 header">
+                <h2>Dollar Changer</h2>
+            </div>
 
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
- integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-  </head>
-<header>
- <h2>Currency Converter App</h2>
-</header>
-  <body ng-app='currencyApp'>
-  <div class="container  main" ng-controller='mainCtrl'>
+            <div class="col-md-6 col-xs-6 leftColumn">
+                    <label for="currency1">Cash Amount:</label>
+                    <input type="number" class="form-control" id="currency1" ng-model="amount" placeholder="type amount">
+            </div>
 
-    <section class="container form-container">
-      <div class="row">
-        <form class= "form-inline submit-form">
-          <div class="form-group">
-            <label for=""> Ammount</label>
-            <input type="number" class="form-control" ng-model="ammount"></input>
-                <select ng-model= "currencyIndex">
-                  <option>EUR</option>
-                  <option>USD</option>
-                  <option>GBP</option>
-                </select>
-          <button ng-click="submit()" class="btn btn-primary">Convert</button>
-          </form>
+
+            <div class="col-md-6 col-xs-6 rightColumn">
+                <label id="labelCash1" for="currencySelector">Currency:</label>
+                    <select id="currencySelector" class="form-control" ng-model="currencyIndex " name="category"> {{currencyIndexRate}}
+                      <option>AUD</option>
+                       <option>EUR</option>
+                       <option>GBP</option>
+                       <option>IDR</option>
+                       <option>JPY</option>
+                       <option>KRW</option>
+                       <option>MXN</option>
+                  </select>
+                </div>
+            </div>
+
+<div class="row">
+    <div class="display">
+
+
+        <div class="col-md-6 col-xs-6 ">
+            <div class="currentRate">
+                Current Rate: <p> {{currencyIndexRate}} </P>
+            </div>
         </div>
+        <div class="col-md-6 col-xs-6">
+            <button ng-click="submit()" class="btn btn-default btn-xs submitBtn">Convert</button>
+        </div>
+    </div>
+</div>
 
+<div class="row">
+    <div class="col-md-12 col-xs-12 reultList">
+      <table class="table table-stripped">
+        <thead>
+          <tr>
+            <th>Currency </th>
+            <th>Amount</th>
+            <th>Rate</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat= "y in currency">
+            <td>{{y.name}}</td>
+            <td>{{y.amount}}</td>
+            <td>{{y.rate}}</td>
+            <td>{{y.total}}</td>
+            <td><spasn class="glyphicon glyphicon-remove-sign" ng-click="delete(y)">
+                </span></td>
+          </tr>
+        </tbody>
+      </table>
 
+        <!-- <ul ng-repeat="y in currency">
+            <li> {{y.name}} | Amount: {{y.amount | currency}} | Rate: {{y.rate}} | Total: {{y.total}}
+                <spasn class="glyphicon glyphicon-remove-sign" ng-click="delete(y)">
+                    </span>
+            </li>
+        </ul> -->
+    </div>
+</div>
 
-
-          <ul ng-repeat="item in currency">
-
-                <li>{{item.name}}</li>
-                <li>{{item.rate}}</li>
-          </ul>
-
-      </div>
-    </section>
-
-
- </div>
 
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
     <script src="controllers/controller.js"></script>
     <script srd="/money.js"></script>
-  </body>
+
+
+</body>
+
 </html>

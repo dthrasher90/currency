@@ -1,21 +1,85 @@
-body {
-  font-family: serif;
-  color: oldlace;
-  background-color: oldlace;
+
+body{
+  background-color: lightblue;
+  font-family: lucida;
 }
 
-header{
-  height: 90px;
-  width: 100%;
-  border-bottom: 3px solid black;
+html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+html body {
+    position: absolute;;
+
+    background-color: #ffffff;
+    color: #000000;
+}
+
+input {
+  max-width: 220px;
+
+}
+
+h2{
   text-align: center;
-  padding-top: 20px;
-  font-family: sans-serif;
-  background-color: #663399;
-  color: azure;
 }
 
-.form-container .submit-form{
-    text-align :center;
-    margin-top: 50px;
+
+.display{
+  height:  60px;
+  background-color: black;
+  color: white;
+
+
+}
+
+.currentRate p {
+
+  color: lime;
+  text-align: center;
+  font-size: 22px;
+}
+
+.submitBtn{
+
+margin: 0, auto;
+}
+
+ul{
+  list-style: none;
+
+
+}
+
+li {
+
+  font-size: 12px;
+  background-color: lightgrey;
+}
+
+.header {
+   background-color: crimson;
+   color: white;
+
+   padding-bottom: 12px;
+}
+
+.leftColumn {
+
+   background-color: lightgrey;
+}
+
+.rightColumn {
+    background-color: lightgrey;
+}
+
+.convert{
+    background-color: black;
+}
+
+
+.inputFields{
+  background-color: lightgrey;
 }
