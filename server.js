@@ -20,13 +20,13 @@ app.use(methodOverride());
 app.use(express.static(__dirname + '/public'));
 
 
-mongoose.connect(process.env.MONGOLAB_URI);
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/contact2');
 
 mongoose.connection.on('connected', function() {
     console.log('Mongoose default connection open to currency');
 });
 
-app.SET MONGOLAB_URI="mongodb://example:example@ds053312.mongolab.com:53312/usdconverter"
+
 
 app.post('/currency', function(req, res) {
 
