@@ -20,7 +20,7 @@ app.use(methodOverride());
 app.use(express.static(__dirname + '/public'));
 
 
-mongoose.connect('mongodb://localhost:27017/currency')
+mongoose.connect(process.env.MONGODB_URI);
 
 mongoose.connection.on('connected', function() {
     console.log('Mongoose default connection open to currency');
