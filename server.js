@@ -26,6 +26,7 @@ mongoose.connection.on('connected', function() {
     console.log('Mongoose default connection open to currency');
 });
 
+app.SET MONGOLAB_URI="mongodb://example:example@ds053312.mongolab.com:53312/usdconverter"
 
 app.post('/currency', function(req, res) {
 
