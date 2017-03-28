@@ -20,7 +20,7 @@ app.controller('mainCtrl', function($scope, $http) {
         $scope.IDRrate = results.data.rates.IDR;
         console.log($scope.EURrate, $scope.GBPrate, $scope.JPYrate, $scope.MXNrate);
 
-    });
+    };
 
     $http.get('/currency').then(function(data) {
         console.log("i got the data", data);
