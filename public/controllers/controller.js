@@ -1,4 +1,5 @@
 //alert("controller loaded");
+//alert("controller loaded");
 var app = angular.module('currencyApp', []);
 
 
@@ -9,7 +10,7 @@ app.controller('mainCtrl', function($scope, $http) {
         location.reload();
     }
 
-       $http.get("http://api.fixer.io/latest?base=USD").then(function(results) {
+    $http.get("http://api.fixer.io/latest?base=USD").then(function(results) {
         console.log();
         $scope.GBPrate = results.data.rates.GBP;
         $scope.EURrate = results.data.rates.EUR;
@@ -25,7 +26,7 @@ app.controller('mainCtrl', function($scope, $http) {
     $http.get('/currency').then(function(data) {
         console.log("i got the data", data);
         $scope.currency = data.data.data;
-        console.log(data.data.data);
+        //onsole.log($scope.EURrate);
     });
 
     $scope.$watch('currencyIndex', function(newCurrencyIndex, oldCurrencyIndex) {
@@ -73,7 +74,7 @@ app.controller('mainCtrl', function($scope, $http) {
         console.log($scope.currencyIndexRate);
         $scope.total = $scope.currencyIndexRate * $scope.amount;
         $scope.total = $scope.total.toFixed(2);
-        console.log($scope.total)
+        console.log("submit button == "  + $scope.total)
         $http.post('/currency', {
                 name: $scope.currencyIndex,
                 amount: $scope.amount,
@@ -112,3 +113,4 @@ app.controller('mainCtrl', function($scope, $http) {
 
 
 });
+
