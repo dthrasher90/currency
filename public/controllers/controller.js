@@ -9,7 +9,7 @@ app.controller('mainCtrl', function($scope, $http) {
         location.reload();
     }
 
-    $http.get('https://api.fixer.io/latest?base=USD').then(function(results)) {
+    $http.get("https://api.fixer.io/latest?base=USD").then(function(results)) {
         console.log();
         $scope.GBPrate = results.data.rates.GBP;
         $scope.EURrate = results.data.rates.EUR;
