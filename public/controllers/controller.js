@@ -70,7 +70,7 @@ app.controller('mainCtrl', function($scope, $http) {
 
 
     $scope.submit = function() {
-        alert("subit button pressed");
+//         alert("subit button pressed");
         console.log($scope.currencyIndexRate);
         $scope.total = $scope.currencyIndexRate * $scope.amount;
         $scope.total = $scope.total.toFixed(2);
