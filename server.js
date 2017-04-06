@@ -19,8 +19,10 @@ app.use(bodyParser.json({
 app.use(methodOverride());
 app.use(express.static(__dirname + '/public'));
 
+// app.SET MONGOLAB_URI="mongodb://example:example@ds053312.mongolab.com:53312/usdconverter"
 
-mongoose.connect('mongodb://localhost:27017/currency')
+
+// mongoose.connect('mongodb://localhost:27017/currency')
 
 mongoose.connection.on('connected', function() {
     console.log('Mongoose default connection open to currency');

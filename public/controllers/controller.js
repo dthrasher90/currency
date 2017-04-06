@@ -9,7 +9,7 @@ app.controller('mainCtrl', function($scope, $http) {
         location.reload();
     }
 
-    $http.get('http://api.fixer.io/latest?base=USD').then(function(results) {
+    $http.get("http://api.fixer.io/latest?base=USD").then(function(results) {
         console.log();
         $scope.GBPrate = results.data.rates.GBP;
         $scope.EURrate = results.data.rates.EUR;
@@ -73,7 +73,7 @@ app.controller('mainCtrl', function($scope, $http) {
         console.log($scope.currencyIndexRate);
         $scope.total = $scope.currencyIndexRate * $scope.amount;
         $scope.total = $scope.total.toFixed(2);
-        console.log($scope.total)
+        console.log("submit button == "  + $scope.total)
         $http.post('/currency', {
                 name: $scope.currencyIndex,
                 amount: $scope.amount,
