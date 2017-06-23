@@ -24,9 +24,13 @@ app.use(express.static(__dirname + '/public'));
 
 // mongoose.connect('mongodb://localhost:27017/currency')
 
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/contact2');
+
+
 mongoose.connection.on('connected', function() {
     console.log('Mongoose default connection open to currency');
 });
+
 
 
 app.post('/currency', function(req, res) {

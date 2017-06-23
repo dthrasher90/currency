@@ -1,24 +1,58 @@
+html, body {
+  height: 100%;
+  width:100%;
+  background-color: black;
+}
+/*body{
 
-body{
-  background-color: lightblue;
   font-family: lucida;
+  width: 50%;
+  background-color:  black;
+  margin: 0 auto;
+
+}*/
+
+.wrapper{
+  margin: 0 auto;
+  width: 800px;
+
 }
 
-html {
-    width: 100%;
-    height: 100%;
+.ratesDisplay{
+    background-color: black;
+    position: relative;
+    height: 30px;
     overflow: hidden;
+
+}
+.currencytype{
+  color: lime;
+  padding:  3px;
+
+  position: absolute;
+  animation-name: Scroll;
+  animation-duration: 25s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+
+}
+.currencytype section{
+  display:inline;
+  margin-right: 35px;
+}
+#currencySelector{
+  max-width: 220px;
+
 }
 
-html body {
-    position: absolute;;
-
-    background-color: #ffffff;
-    color: #000000;
+@keyframes Scroll{
+  from {transform: translateX(120%)}
+  to {transform: translateX(-110%)}
 }
 
 input {
   max-width: 220px;
+
 
 }
 
@@ -32,7 +66,6 @@ h2{
   background-color: black;
   color: white;
 
-
 }
 
 .currentRate p {
@@ -44,12 +77,12 @@ h2{
 
 .submitBtn{
 
-margin: 0, auto;
+margin-left: 100px;
+margin-top: 12px;
 }
 
 ul{
   list-style: none;
-
 
 }
 
@@ -60,19 +93,19 @@ li {
 }
 
 .header {
-   background-color: crimson;
+   background-color: darkslategrey;
    color: white;
-
    padding-bottom: 12px;
 }
 
 .leftColumn {
 
-   background-color: lightgrey;
+   background-color: darkslategrey;
+   color: ghostwhite;
 }
-
 .rightColumn {
-    background-color: lightgrey;
+    background-color: darkslategrey;
+    color: ghostwhite;
 }
 
 .convert{

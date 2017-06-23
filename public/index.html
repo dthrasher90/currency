@@ -15,11 +15,26 @@
 </head>
 
 <body ng-app='currencyApp'ng-controller='mainCtrl'>
+<div class="wrapper">
+
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 col-xs-12 header">
                 <h2>Dollar Changer</h2>
             </div>
+        <div class="col-md-12 col-xs-12 ratesDisplay">
+          <div class="currencytype">
+            <section> AUD - {{AUDrate}}  </section>
+            <section> EUR - {{EURrate}} </section>
+            <section> GBP - {{GBPrate}} </section>
+            <section> IDR - {{IDRrate}} </section>
+            <section> JYN - {{JPYrate}} </section>
+            <section> KRW - {{KRWrate}} </section>
+            <!-- <section> MXN - {{MXNrate}} </section> -->
+
+          </div>
+        </div>
 
 
 
@@ -32,7 +47,7 @@
             <div class="col-md-6 col-xs-6 rightColumn">
                 <label id="labelCash1" for="currencySelector">Currency:</label>
                     <select id="currencySelector" class="form-control" ng-model="currencyIndex " name="category"> {{currencyIndexRate}}
-                      <option>AUD</option>
+                       <option>AUD</option>
                        <option>EUR</option>
                        <option>GBP</option>
                        <option>IDR</option>
@@ -53,7 +68,7 @@
             </div>
         </div>
         <div class="col-md-6 col-xs-6">
-            <button ng-click="submit()" class="btn btn-default btn-xs submitBtn">Convert</button>
+            <button ng-click="submit()" class="btn btn-default btn-lrg submitBtn">Convert</button>
         </div>
     </div>
 </div>
@@ -81,15 +96,9 @@
         </tbody>
       </table>
 
-        <!-- <ul ng-repeat="y in currency">
-            <li> {{y.name}} | Amount: {{y.amount | currency}} | Rate: {{y.rate}} | Total: {{y.total}}
-                <spasn class="glyphicon glyphicon-remove-sign" ng-click="delete(y)">
-                    </span>
-            </li>
-        </ul> -->
     </div>
 </div>
-
+</div>
 
 
 
