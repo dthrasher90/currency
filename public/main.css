@@ -3,20 +3,17 @@ html, body {
   width:100%;
   background-color: black;
 }
-/*body{
 
-  font-family: lucida;
-  width: 50%;
-  background-color:  black;
-  margin: 0 auto;
-
-}*/
-
+.header{
+/*  background-image: url(./currencies.jpg);
+*/  background-size: 50% cover;
+}
 .wrapper{
   margin: 0 auto;
-  width: 800px;
+  width: 100%;
 
 }
+
 
 .ratesDisplay{
     background-color: black;
